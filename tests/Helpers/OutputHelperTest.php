@@ -32,4 +32,10 @@ class OutputHelperTest extends TestCase
         $this->assertEquals('testuser', $parsedOutput[0]['user']);
         $this->assertEquals('disabled', $parsedOutput[0]['watching']);
     }
+
+    /** @test */
+    public function it_parses_the_name_correct()
+    {
+        $this->assertEquals('ping google', OutputHelper::parseName('ping google.com'));
+    }
 }

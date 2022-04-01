@@ -2,6 +2,8 @@
 
 namespace SERFF\Pm2Manager\Actions;
 
+use SERFF\Pm2Manager\Domain\Pm2Process;
+use SERFF\Pm2Manager\Helpers\OutputHelper;
 use Symfony\Component\Process\Process;
 
 class StartAction
@@ -25,8 +27,7 @@ class StartAction
             throw new \Exception('Cannot run command');
         }
 
-        var_dump($process->getOutput());
-        exit;
+        return new Pm2Process(['name' => $name = OutputHelper::parseName($this->command)]);
     }
 
     private function buildCommand(string $command)

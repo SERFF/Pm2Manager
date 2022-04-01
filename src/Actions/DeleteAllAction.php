@@ -5,7 +5,7 @@ namespace SERFF\Pm2Manager\Actions;
 use SERFF\Pm2Manager\Helpers\OutputHelper;
 use Symfony\Component\Process\Process;
 
-class ListAction
+class DeleteAllAction
 {
     public function __construct()
     {
@@ -31,7 +31,8 @@ class ListAction
     {
         return [
             'pm2',
-            'list',
+            'delete',
+            'all',
         ];
     }
 }

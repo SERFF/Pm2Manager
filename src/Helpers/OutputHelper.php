@@ -53,4 +53,9 @@ class OutputHelper
             'watching' => $items[12],
         ];
     }
+
+    public static function parseName(string $string): string
+    {
+        return substr($string, 0, strpos($string, '.'));
+    }
 }
