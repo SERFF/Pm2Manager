@@ -1,6 +1,6 @@
 # Manage PM2 Processes
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/SERFF/Pm2Manager.svg?style=flat-square)](https://packagist.org/packages/SERFF/Pm2Manager)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/serff/pm2-manager.svg?style=flat-square)](https://packagist.org/packages/serff/pm2-manager)
 [![Tests](https://github.com/SERFF/Pm2Manager/actions/workflows/tests.yml/badge.svg)](https://github.com/SERFF/Pm2Manager/actions/workflows/tests.yml)
 
 This package contains a manager for PM2 processes
