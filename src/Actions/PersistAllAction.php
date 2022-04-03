@@ -2,10 +2,9 @@
 
 namespace SERFF\Pm2Manager\Actions;
 
-use SERFF\Pm2Manager\Helpers\OutputHelper;
 use Symfony\Component\Process\Process;
 
-class DeleteAllAction
+class PersistAllAction
 {
     public function __construct()
     {
@@ -23,15 +22,14 @@ class DeleteAllAction
             throw new \Exception('Cannot run command');
         }
 
-        return OutputHelper::parse($process->getOutput());
+        return true;
     }
 
     private function buildCommand()
     {
         return [
             'pm2',
-            'delete',
-            'all',
+            'save',
         ];
     }
 }

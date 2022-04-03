@@ -1,21 +1,21 @@
 <?php
 
-namespace Helpers;
+namespace Tests\Helpers;
 
-use SERFF\Pm2Manager\Helpers\OutputHelper;
 use PHPUnit\Framework\TestCase;
+use SERFF\Pm2Manager\Helpers\OutputHelper;
 
 class OutputHelperTest extends TestCase
 {
     /** @test */
     public function it_parses_the_output()
     {
-        $output = "┌─────┬────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+        $output = '┌─────┬────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
 │ id  │ name   │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
 ├─────┼────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
 │ 0   │ top    │ default     │ N/A     │ fork    │ 69394    │ 7m     │ 2    │ online    │ 0%       │ 8.3mb    │ testuser │ disabled │
 └─────┴────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
-";
+';
         $parsedOutput = OutputHelper::parse($output);
         $this->assertCount(1, $parsedOutput);
         $this->assertEquals(0, $parsedOutput[0]['id']);

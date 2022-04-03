@@ -11,7 +11,11 @@ class OutputHelper
                 return false;
             }
 
-            if (preg_match("/[a-z]/i", $line)) {
+            if (str_starts_with($line, '[PM2]')) {
+                return false;
+            }
+
+            if (preg_match('/[a-z]/i', $line)) {
                 return true;
             }
 
@@ -25,7 +29,7 @@ class OutputHelper
         $lines = array_values($lines);
 
         return array_map(function ($line) {
-            return OutputHelper::parseLine($line);
+            return self::parseLine($line);
         }, $lines);
     }
 
@@ -56,6 +60,10 @@ class OutputHelper
 
     public static function parseName(string $string): string
     {
-        return substr($string, 0, strpos($string, '.'));
+        if (strpos($string, '.')) {
+            return substr($string, 0, strpos($string, '.'));
+        }
+
+        return $string;
     }
 }

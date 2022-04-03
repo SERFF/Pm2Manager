@@ -5,7 +5,7 @@ namespace SERFF\Pm2Manager\Actions;
 use SERFF\Pm2Manager\Helpers\OutputHelper;
 use Symfony\Component\Process\Process;
 
-class DeleteAllAction
+class RestartAllAction
 {
     public function __construct()
     {
@@ -30,7 +30,7 @@ class DeleteAllAction
     {
         return [
             'pm2',
-            'delete',
+            'restart',
             'all',
         ];
     }
