@@ -26,7 +26,7 @@ Pm2Manager::list(); // returns a list of all processes
 You can install the package via composer:
 
 ```bash
-composer require serff/pm2manager
+composer require serff/pm2-manager
 ```
 
 ### Testing
